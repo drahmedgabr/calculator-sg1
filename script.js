@@ -1,7 +1,15 @@
 const resultDiv = document.getElementById("resultDiv");
 var equation = "";
+const specialCharacters = ["*", "/", "-", "+"];
 
 function addNumber(number) {
+
+    const lastCharacter = equation.slice(-1);
+
+    if (specialCharacters.includes(lastCharacter) && specialCharacters.includes(number)) { 
+        deleteNumber();
+    }
+
     equation = equation + number;
     resultDiv.innerText = equation;
 }
