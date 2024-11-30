@@ -7,9 +7,11 @@ function addNumber(number) {
 }
 
 function calculate() {
-    const result = eval(equation);
-    resultDiv.innerText = result;
-    equation = "";
+    if (equation != "") {
+        const result = eval(equation);
+        resultDiv.innerText = result;
+        equation = "";
+    }
 }
 
 function clearScreen() {
