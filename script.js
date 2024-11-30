@@ -1,6 +1,6 @@
 const resultDiv = document.getElementById("resultDiv");
 var equation = "";
-const specialCharacters = ["*", "/", "-", "+"];
+const specialCharacters = ["*", "/"];
 
 function addNumber(number) {
 
@@ -10,8 +10,13 @@ function addNumber(number) {
         deleteNumber();
     }
 
-    equation = equation + number;
-    resultDiv.innerText = equation;
+    if (equation == "" && specialCharacters.includes(number)) {
+        
+    } else {
+        equation = equation + number;
+        resultDiv.innerText = equation;
+    }
+
 }
 
 function calculate() {
